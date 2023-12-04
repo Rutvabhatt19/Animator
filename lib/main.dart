@@ -1,3 +1,4 @@
+import 'package:animator/Bookmark.dart';
 import 'package:animator/PlanetProvider.dart';
 import 'package:animator/SplashScreen.dart';
 import 'package:animator/ThemeModal.dart';
@@ -10,10 +11,21 @@ Future<void> main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
 
   bool isDark = prefs.getBool('appTheme') ?? false;
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => PlanetProvider(),),
-    ChangeNotifierProvider(create: (context) => ThemeProvider(themeModel: ThemeModel(isDark: isDark)),),
-  ],child: const MyApp(),));
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => PlanetProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => Bookmark(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) =>
+            ThemeProvider(themeModel: ThemeModel(isDark: isDark)),
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -27,9 +39,8 @@ class MyApp extends StatelessWidget {
       themeMode: (Provider.of<ThemeProvider>(context).themeModel.isDark)
           ? ThemeMode.dark
           : ThemeMode.light,
-     debugShowCheckedModeBanner: false,
-      home:SplashScreen(),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
     );
   }
 }
-

@@ -6,7 +6,6 @@ class ThemeModel {
   ThemeModel({required this.isDark});
 }
 
-
 class ThemeProvider extends ChangeNotifier {
   ThemeModel themeModel;
   ThemeProvider({required this.themeModel});

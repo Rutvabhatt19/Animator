@@ -1,3 +1,4 @@
+import 'package:animator/Bookmark.dart';
 import 'package:animator/PlanetProvider.dart';
 import 'package:animator/PlanetScreen.dart';
 import 'package:animator/ThemeModal.dart';
@@ -41,9 +42,7 @@ class Detailpagestate extends State<Detailpage> with TickerProviderStateMixin {
       duration: Duration(seconds: 4),
     );
     animationController.addListener(() {
-      setState(() {
-
-      });
+      setState(() {});
     });
     animationController.forward();
   }
@@ -82,6 +81,23 @@ class Detailpagestate extends State<Detailpage> with TickerProviderStateMixin {
                           : Colors.black,
                     )),
                 actions: [
+                  Consumer(
+                    builder: (BuildContext context, Bookmark bookmark,
+                        Widget? child) {
+                      return IconButton(
+                          onPressed: () {
+                            bookmark.saveList(planetlist[index].name);
+                          },
+                          icon: Icon(
+                            bookmark.stringList.contains(planetlist[index].name)
+                                ? Icons.bookmark
+                                : Icons.bookmark_add_outlined,
+                            color: themeProvider.themeModel.isDark
+                                ? Colors.white
+                                : Colors.black,
+                          ));
+                    },
+                  ),
                   IconButton(
                       onPressed: () {
                         Provider.of<ThemeProvider>(context, listen: false)
@@ -194,14 +210,6 @@ class Detailpagestate extends State<Detailpage> with TickerProviderStateMixin {
     );
   }
 
-  // Widget TweenAnim(){
-  //   return TweenAnimationBuilder<double>(
-  //     tween: Tween<double>(begin: 300,end: 600),
-  //     duration: Duration(seconds: 2),
-  //     builder: (context, double size, child) {
-  //       return Image.network(planetlist[index].image,height: size,width: size,);
-  //     },);
-  // }
   @override
   void dispose() {
     // TODO: implement dispose
