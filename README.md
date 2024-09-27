@@ -53,15 +53,6 @@
 
 https://github.com/Rutvabhatt19/Animator/assets/118719070/9e0464f3-a4b4-4368-a351-994d51d6b0f0
 
-Plannet List:
-![WhatsApp Image 2024-09-27 at 14 51 21 (1)](https://github.com/user-attachments/assets/77b05fce-3187-41f9-91b4-be49a0e058f8)
-
-PlanetDetails:
-![WhatsApp Image 2024-09-27 at 14 51 22 (1)](https://github.com/user-attachments/assets/b73f6194-e02d-4519-b026-b7aeebb52050)
-
-PlanetDetails:
-
-![WhatsApp Image 2024-09-27 at 14 51 22 (2)](https://github.com/user-attachments/assets/3070ec2e-69a3-4c87-a593-f4b89de61b47)
 
 
 
